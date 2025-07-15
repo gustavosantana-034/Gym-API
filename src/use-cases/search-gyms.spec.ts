@@ -2,20 +2,16 @@ import { describe, beforeEach, expect, it } from 'vitest'
 import { InMemoryGymsRepositories } from '@/repositories/in-memory/in-memory-gyms-repositories'
 import { SearchGymsUseCase } from './search-gyms'
 
-// Declare variables for the repositories and the use case
-let gymsRepository: InMemoryGymsRepositories // Mock repository to simulate check-in data
-let sut: SearchGymsUseCase // SUT = System Under Test (the use case we're testing)
+let gymsRepository: InMemoryGymsRepositories
+let sut: SearchGymsUseCase
 
 describe('Search Gyms Case', () => {
-  // This runs before each test, resetting the repository and the use case instance
   beforeEach(async () => {
-    gymsRepository = new InMemoryGymsRepositories() // Create a fresh in-memory repository
-    sut = new SearchGymsUseCase(gymsRepository) // Instantiate the use case with the repository
+    gymsRepository = new InMemoryGymsRepositories()
+    sut = new SearchGymsUseCase(gymsRepository)
   })
 
-  // Test case: should return all check-ins for a given user
   it('should be able to search for gyms', async () => {
-    // Arrange: create two check-ins in the repository for the same user
     await gymsRepository.create({
       title: 'Gym Ronald',
       description: null,
