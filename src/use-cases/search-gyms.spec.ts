@@ -37,7 +37,7 @@ describe('Search Gyms Case', () => {
     expect(gyms).toEqual([expect.objectContaining({ title: 'Gym Ronald' })])
   })
 
-  it('should be able to fetch paginated gym search', async () => {
+  it('should be able to fetch paginated gyms search', async () => {
     for (let i = 1; i <= 22; i++) {
       await gymsRepository.create({
         title: `Gym Of Jeff ${i}`,
