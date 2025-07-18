@@ -34,5 +34,3 @@ export class CreateGymUseCase {
     return { gym }
   }
 }
-
-// TODO -> Create method to create a gym
